@@ -1,160 +1,163 @@
 /* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Altura total da página */
-  html, body {
-    height: 100%;
-  }
-  
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f4f6f9;
-    color: #333;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Wrapper para sticky footer */
-  .wrapper {
-    flex: 1;
-  }
-  
-  /* Container centralizado */
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Header */
-  header {
-    width: 100%;
-    background-color: #002b5c;
-    padding: 15px 0;
-  }
-  
-  header .container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-  }
-  
-  .logo {
-    height: 45px;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Altura total da página */
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Wrapper para sticky footer */
+.wrapper {
+  flex: 1;
+}
+
+/* Container centralizado */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  width: 100%;
+  background-color: #002b5c;
+  padding: 15px 0;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  flex-wrap: nowrap; /* Impede quebra de linha */
+}
+
+header nav {
+  display: flex;
+}
+
+.logo {
+  height: 100px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+.menu a:hover,
+.menu .active {
+  background-color: #004a99;
+}
+
+/* Main content */
+main h1, main h2, main h3 {
+  margin-bottom: 10px;
+  color: #002b5c;
+}
+
+.boas-vindas ul,
+main ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.boas-vindas {
+  margin-top: 30px;
+}
+
+/* Galeria */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.galeria img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
+
+/* Formulário */
+form {
+  margin-top: 20px;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #004a99;
+  color: white;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #002b5c;
+}
+
+/* Footer fixado ao fim da tela */
+footer {
+  background-color: #002b5c;
+  color: white;
+  text-align: center;
+  padding: 15px 10px;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
   .menu {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .menu a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 6px 10px;
-    border-radius: 4px;
-  }
-  
-  .menu a:hover,
-  .menu .active {
-    background-color: #004a99;
-  }
-  
-  /* Main content */
-  main h1, main h2, main h3 {
-    margin-bottom: 10px;
-    color: #002b5c;
-  }
-  
-  .boas-vindas ul,
-  main ul {
-    padding-left: 20px;
+    flex-direction: column;
+    gap: 10px;
     margin-top: 10px;
   }
-  
-  .boas-vindas {
-    margin-top: 30px;
+
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  /* Galeria */
-  .galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-  }
-  
-  .galeria img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-  }
-  
-  .galeria img:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Formulário */
-  form {
-    margin-top: 20px;
-  }
-  
-  input,
-  textarea,
-  button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button {
-    background-color: #004a99;
-    color: white;
-    border: none;
-    font-weight: bold;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #002b5c;
-  }
-  
-  /* Footer fixado ao fim da tela */
-  footer {
-    background-color: #002b5c;
-    color: white;
-    text-align: center;
-    padding: 15px 10px;
-  }
-  
-  footer a {
-    color: #ffffff;
-    text-decoration: underline;
-  }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .menu {
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 10px;
-    }
-  
-    header .container {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  }
-  
+}
